@@ -29,109 +29,157 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_loading = new System.Windows.Forms.Button();
-            this.btn_add = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btn_del = new System.Windows.Forms.Button();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnDel = new System.Windows.Forms.Button();
+            this.gbxLoadSort = new System.Windows.Forms.GroupBox();
+            this.btnZA = new System.Windows.Forms.Button();
+            this.btnAZ = new System.Windows.Forms.Button();
+            this.gbxLoadSort.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btn_loading
+            // btnLoad
             // 
-            this.btn_loading.Location = new System.Drawing.Point(552, 32);
-            this.btn_loading.Name = "btn_loading";
-            this.btn_loading.Size = new System.Drawing.Size(75, 23);
-            this.btn_loading.TabIndex = 1;
-            this.btn_loading.Text = "Loading";
-            this.btn_loading.UseVisualStyleBackColor = true;
-            this.btn_loading.Click += new System.EventHandler(this.btn_loding_Click);
+            this.btnLoad.Location = new System.Drawing.Point(26, 30);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.TabIndex = 1;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // btn_add
+            // btnAdd
             // 
-            this.btn_add.Location = new System.Drawing.Point(552, 80);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(75, 23);
-            this.btn_add.TabIndex = 2;
-            this.btn_add.Text = "Add Staff";
-            this.btn_add.UseVisualStyleBackColor = true;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            this.btnAdd.Location = new System.Drawing.Point(552, 80);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "Add Staff";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11,
+            this.columnHeader12});
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 21);
+            this.listView1.Location = new System.Drawing.Point(26, 69);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(485, 379);
+            this.listView1.Size = new System.Drawing.Size(473, 183);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader1
+            // columnHeader7
             // 
-            this.columnHeader1.Text = "Staff ID";
+            this.columnHeader7.Text = "Staff ID";
+            this.columnHeader7.Width = 84;
             // 
-            // columnHeader2
+            // columnHeader8
             // 
-            this.columnHeader2.Text = "Name";
+            this.columnHeader8.Text = "Name";
             // 
-            // columnHeader3
+            // columnHeader9
             // 
-            this.columnHeader3.Text = "DOB";
+            this.columnHeader9.Text = "Gender";
             // 
-            // columnHeader4
+            // columnHeader10
             // 
-            this.columnHeader4.Text = "Email";
+            this.columnHeader10.Text = "Date of Birth";
+            this.columnHeader10.Width = 91;
             // 
-            // columnHeader5
+            // columnHeader11
             // 
-            this.columnHeader5.Text = "Annual Salary";
-            this.columnHeader5.Width = 95;
+            this.columnHeader11.Text = "Email";
             // 
-            // btn_del
+            // columnHeader12
             // 
-            this.btn_del.Location = new System.Drawing.Point(552, 128);
-            this.btn_del.Name = "btn_del";
-            this.btn_del.Size = new System.Drawing.Size(75, 23);
-            this.btn_del.TabIndex = 4;
-            this.btn_del.Text = "Delete";
-            this.btn_del.UseVisualStyleBackColor = true;
+            this.columnHeader12.Text = "Salary";
+            // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(552, 128);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 23);
+            this.btnDel.TabIndex = 4;
+            this.btnDel.Text = "Delete";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // gbxLoadSort
+            // 
+            this.gbxLoadSort.Controls.Add(this.btnZA);
+            this.gbxLoadSort.Controls.Add(this.btnAZ);
+            this.gbxLoadSort.Controls.Add(this.btnLoad);
+            this.gbxLoadSort.Controls.Add(this.listView1);
+            this.gbxLoadSort.Location = new System.Drawing.Point(12, 71);
+            this.gbxLoadSort.Name = "gbxLoadSort";
+            this.gbxLoadSort.Size = new System.Drawing.Size(521, 272);
+            this.gbxLoadSort.TabIndex = 5;
+            this.gbxLoadSort.TabStop = false;
+            this.gbxLoadSort.Text = "Load and Sort";
+            // 
+            // btnZA
+            // 
+            this.btnZA.Location = new System.Drawing.Point(366, 30);
+            this.btnZA.Name = "btnZA";
+            this.btnZA.Size = new System.Drawing.Size(75, 23);
+            this.btnZA.TabIndex = 5;
+            this.btnZA.Text = "ZA";
+            this.btnZA.UseVisualStyleBackColor = true;
+            // 
+            // btnAZ
+            // 
+            this.btnAZ.Location = new System.Drawing.Point(197, 30);
+            this.btnAZ.Name = "btnAZ";
+            this.btnAZ.Size = new System.Drawing.Size(75, 23);
+            this.btnAZ.TabIndex = 4;
+            this.btnAZ.Text = "AZ";
+            this.btnAZ.UseVisualStyleBackColor = true;
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btn_del);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.btn_add);
-            this.Controls.Add(this.btn_loading);
+            this.Controls.Add(this.gbxLoadSort);
+            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.btnAdd);
             this.Name = "MainMenu";
-            this.Text = "Form1";
+            this.Text = "Main Menu";
+            this.Load += new System.EventHandler(this.MainMenu_Load);
+            this.gbxLoadSort.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btn_loading;
-        private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.Button btn_del;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.GroupBox gbxLoadSort;
+        private System.Windows.Forms.Button btnZA;
+        private System.Windows.Forms.Button btnAZ;
     }
 }
 

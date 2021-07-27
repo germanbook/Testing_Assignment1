@@ -1,2 +1,2 @@
-﻿201, Jack Li, 1990.01.01, aaaa@test.com,50000.0
-202,Jie Pan, 1997.01.01, bbbb@test.com,60000.0
+202101,Jack Ma,1,27/07/2021 8:43:20 pm,aaaa@aaaa.com,60000
+202102,Jie Pan,1,27/07/2021 8:44:02 pm,aaaa@aaaa.com,58000

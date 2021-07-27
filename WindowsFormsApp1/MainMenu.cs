@@ -17,25 +17,53 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void btn_loding_Click(object sender, EventArgs e)
+        private void btnLoad_Click(object sender, EventArgs e)
         {
-            Staff staff = new Staff();
-            for(int i = 0; i < FileManager.GetStaffs().Count; i++ )
+            
+            List<Staff> staffs = FileManager.GetStaffs();
+            listView1.Items.Clear();
+            if( staffs == null )
             {
-                staff = FileManager.GetStaffs()[i];
-                listView1.Items.Add(Convert.ToString(staff.StaffId));
-                listView1.Items[i].SubItems.Add(staff.Name);
-                listView1.Items[i].SubItems.Add(Convert.ToString(staff.DateOfBirth));
-                listView1.Items[i].SubItems.Add(staff.Email);
-                listView1.Items[i].SubItems.Add(Convert.ToString(staff.AnnualSalary));
+                MessageBox.Show("Error loading Information", "File to Error");
+            }
+            else
+            {
+                for (int i = 0; i < staffs.Count; i++)
+                {
+
+                    listView1.Items.Add(Convert.ToString(staffs[i].StaffId));
+                    listView1.Items[i].SubItems.Add(staffs[i].Name);
+                    if (staffs[i].Gender == 0)
+                    {
+                        listView1.Items[i].SubItems.Add("Female");
+                    }
+                    else
+                    {
+                        listView1.Items[i].SubItems.Add("Male");
+                    }
+                    listView1.Items[i].SubItems.Add(Convert.ToString(staffs[i].DateOfBirth));
+                    listView1.Items[i].SubItems.Add(staffs[i].Email);
+                    listView1.Items[i].SubItems.Add(Convert.ToString(staffs[i].AnnualSalary));
+
+                }
             }
         }
 
-        private void btn_add_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             AddingForm addingForm = new AddingForm(this);
             addingForm.Show();
             this.Hide();
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
