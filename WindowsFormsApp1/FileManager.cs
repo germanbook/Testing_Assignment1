@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
                 while (!sr.EndOfStream)
                 {
                     string[] s = sr.ReadLine().Replace(", ", ",").Split(',');
-                    Staff staff = new Staff(Convert.ToInt32(s[0]), s[1],Convert.ToInt32(s[2]),Convert.ToDateTime(s[3]), s[4], Convert.ToSingle(s[5]));
+                    Staff staff = new Staff(Convert.ToInt32(s[0]), s[1],Convert.ToInt32(s[2]), Convert.ToDateTime(s[3]), s[4], Convert.ToSingle(s[5]));
                     staffs.Add(staff);
                 }
 
@@ -33,20 +33,29 @@ namespace WindowsFormsApp1
             }
         }
 
-        public static bool SaveStaffs(Staff staff)
+        // 0: add
+        // 1: overwrite all records
+        public static bool SaveStaffs(List<Staff> staffs, int marker)
         {
-            Console.WriteLine(staff.ToString());
             try
             {
-                StreamWriter sw = new StreamWriter("../../Info.txt",true);
-                sw.WriteLine(staff.StaffId + ","
-                           + staff.Name + ","
-                           + staff.Gender+ ","
-                           + staff.DateOfBirth + "," 
-                           + staff.Email + ","
-                           + staff.AnnualSalary);
-
+                if (marker == 1)
+                {
+                    FileStream stream = new FileStream("../../Info.txt", System.IO.FileMode.Create);
+                    stream.Close();
+                }
+                StreamWriter sw = new StreamWriter("../../Info.txt", true); // filepath
+                for (int i = 0; i < staffs.Count; i++)
+                {
+                    sw.WriteLine(staffs[i].StaffId + ","
+                           + staffs[i].Name + ","
+                           + staffs[i].Gender + ","
+                           + staffs[i].DateOfBirth + ","
+                           + staffs[i].Email + ","
+                           + staffs[i].AnnualSalary);
+                }
                 sw.Close();
+
                 return true;
             }
             catch (Exception)
