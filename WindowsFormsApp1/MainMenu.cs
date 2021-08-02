@@ -46,7 +46,7 @@ namespace WindowsFormsApp1
         private void btnLoad_Click(object sender, EventArgs e)
         {
 
-            staffs.Clear();
+            
             listView1.Items.Clear();
             tbxSearch.Clear();
 
@@ -57,6 +57,7 @@ namespace WindowsFormsApp1
             }
             else
             {
+                staffs.Clear();
                 fillListView(staffs);
             }
         }

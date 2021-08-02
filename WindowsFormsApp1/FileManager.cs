@@ -10,13 +10,14 @@ namespace WindowsFormsApp1
 {
     public static class FileManager
     {
+        const string FILEPATH = "Info.txt";
         public static List<Staff> GetStaffs()
         {
 
             try
             {
                 List<Staff> staffs = new List<Staff>();
-                StreamReader sr = new StreamReader("../../Info.txt");
+                StreamReader sr = new StreamReader(FILEPATH);
                 while (!sr.EndOfStream)
                 {
                     string[] s = sr.ReadLine().Replace(", ", ",").Split(',');
@@ -41,10 +42,10 @@ namespace WindowsFormsApp1
             {
                 if (marker == 1)
                 {
-                    FileStream stream = new FileStream("../../Info.txt", System.IO.FileMode.Create);
+                    FileStream stream = new FileStream(FILEPATH, System.IO.FileMode.Create);
                     stream.Close();
                 }
-                StreamWriter sw = new StreamWriter("../../Info.txt", true); // filepath
+                StreamWriter sw = new StreamWriter(FILEPATH, true); // filepath
                 for (int i = 0; i < staffs.Count; i++)
                 {
                     sw.WriteLine(staffs[i].StaffId + ","
