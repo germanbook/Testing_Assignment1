@@ -10,7 +10,7 @@ namespace WindowsFormsApp1
 {
     public static class FileManager
     {
-        const string FILEPATH = "Info.txt";
+        const string FILEPATH = "../../Info.txt";
         public static List<Staff> GetStaffs()
         {
 

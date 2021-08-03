@@ -46,18 +46,18 @@ namespace WindowsFormsApp1
         private void btnLoad_Click(object sender, EventArgs e)
         {
 
-            
+            staffs.Clear();
             listView1.Items.Clear();
             tbxSearch.Clear();
 
             staffs = FileManager.GetStaffs();
+
             if( staffs == null )
             {
                 MessageBox.Show("Error loading Information", "File to Error");
             }
             else
             {
-                staffs.Clear();
                 fillListView(staffs);
             }
         }
