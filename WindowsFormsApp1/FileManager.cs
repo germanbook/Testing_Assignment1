@@ -10,7 +10,7 @@ namespace WindowsFormsApp1
 {
     public static class FileManager
     {
-        const string FILEPATH = "../../Info.txt";
+        const string FILEPATH = "../../../Info.txt";
         public static List<Staff> GetStaffs()
         {
 
@@ -34,8 +34,8 @@ namespace WindowsFormsApp1
             }
         }
 
-        // 0: add
-        // 1: overwrite all records
+        // 0: add new record
+        // 1: delete record, overwrite all exist records by create a new file
         public static bool SaveStaffs(List<Staff> staffs, int marker)
         {
             try
