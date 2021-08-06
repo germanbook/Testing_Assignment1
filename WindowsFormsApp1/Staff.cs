@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
 
         public Staff()
         {
-            StaffId = 000;
+            StaffId = 000000;
             Name = "unknow";
             Gender = 0;
             DateOfBirth = new DateTime(1990, 01, 01);
@@ -46,6 +46,42 @@ namespace WindowsFormsApp1
         public override string ToString()
         {
             return StaffId+"  "+Name+" "+Gender+" "+DateOfBirth+" "+Email+" "+ AnnualSalary;
+        }
+
+        // Override Equals
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+
+            Staff staff = obj as Staff;
+            
+            if (staff == null)
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(staff);
+            }
+        }
+
+        // Recall Equals
+        public bool Equals(Staff staff)
+        {
+            if (staff == null)
+            {
+                return false;
+            }
+            return ( this.StaffId == staff.StaffId );
+        }
+
+        // Override GetHashCode
+        public override int GetHashCode()
+        {
+            return staffId.GetHashCode();
         }
     }
 }

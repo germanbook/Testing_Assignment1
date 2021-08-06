@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
         {
             int counter = 0;
             List<Staff> staffs = FileManager.GetStaffs();
+
             foreach (Staff s in staffs)
             {
                 if (s.StaffId == id)
