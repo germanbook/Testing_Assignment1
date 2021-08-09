@@ -1,0 +1,12 @@
+C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\WindowsFormsApp1\bin\Release\Info.txt
+C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\WindowsFormsApp1\bin\Release\WindowsFormsApp1.exe.config
+C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\WindowsFormsApp1\bin\Release\WindowsFormsApp1.exe
+C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\WindowsFormsApp1\bin\Release\WindowsFormsApp1.pdb
+C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\WindowsFormsApp1\obj\Release\Assignment1.csprojAssemblyReference.cache
+C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\WindowsFormsApp1\obj\Release\WindowsFormsApp1.AddingForm.resources
+C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\WindowsFormsApp1\obj\Release\WindowsFormsApp1.MainMenu.resources
+C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\WindowsFormsApp1\obj\Release\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\WindowsFormsApp1\obj\Release\Assignment1.csproj.GenerateResource.cache
+C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\WindowsFormsApp1\obj\Release\Assignment1.csproj.CoreCompileInputs.cache
+C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\WindowsFormsApp1\obj\Release\WindowsFormsApp1.exe
+C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\WindowsFormsApp1\obj\Release\WindowsFormsApp1.pdb

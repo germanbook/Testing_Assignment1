@@ -91,7 +91,7 @@ namespace Assignment1UnitTests
             staffListExpected.Add(s1);
 
             List<Staff> staffList = new List<Staff>();
-            
+
             // Add objects to list out of order
             staffList.Add(s3);
             staffList.Add(s2);

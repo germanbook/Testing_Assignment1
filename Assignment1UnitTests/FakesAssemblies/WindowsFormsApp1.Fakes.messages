@@ -1,0 +1,4 @@
+C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\Assignment1UnitTests\Fakes\WindowsFormsApp1.fakes : warning : Cannot generate stub for WindowsFormsApp1.FileManager: Type is sealed.
+C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\Assignment1UnitTests\Fakes\WindowsFormsApp1.fakes : warning : Cannot generate stub for WindowsFormsApp1.Filter: Type is sealed.
+C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\Assignment1UnitTests\Fakes\WindowsFormsApp1.fakes : warning : Cannot generate stub for WindowsFormsApp1.Program: Type is sealed.
+C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\Assignment1UnitTests\Fakes\WindowsFormsApp1.fakes : warning : Cannot generate shim for WindowsFormsApp1.Program: Type is not visible to exported or assembly(WindowsFormsApp1.Fakes).
