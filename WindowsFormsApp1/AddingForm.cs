@@ -40,7 +40,14 @@ namespace WindowsFormsApp1
         private void btn_AddStaff_Click(object sender, EventArgs e)
         {
             List<Staff> staffs = new List<Staff>();
-
+            //*************
+            Console.WriteLine(markerIDAvailable);
+            Console.WriteLine(markerID);
+            Console.WriteLine(markerEmail);
+            Console.WriteLine(markerSalary);
+            Console.WriteLine(markerName);
+            Console.WriteLine(markerGender); 
+            //*************
             // gender
             int tempGender = 0; // Gender 0 : F, 1 : M
             if (rbtnMale.Checked)

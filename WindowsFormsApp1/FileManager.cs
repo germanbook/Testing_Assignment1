@@ -8,9 +8,20 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
+    /// <summary>
+    /// FileManager Class
+    /// Provides app with two functions to read and write
+    /// staff object from and to Info.txt file
+    /// </summary>
     public static class FileManager
     {
         static string FILEPATH = Environment.CurrentDirectory+"/Info.txt";
+        
+        /// <summary>
+        /// GetStaffs
+        /// Read all staffs' object from Info.txt file
+        /// </summary>
+        /// <returns>List<Staff></returns>
         public static List<Staff> GetStaffs()
         {
 
@@ -34,18 +45,29 @@ namespace WindowsFormsApp1
             }
         }
 
-        // 0: add new record
-        // 1: delete record, overwrite all exist records by create a new file
+        /// <summary>
+        /// SaveStaffs
+        /// Save staffs' object to Info.txt file
+        /// </summary>
+        /// <param name="staffs">A list of staffs' object</param>
+        /// <param name="marker">1: delete record, overwrite all exist records by create a new file</param>
+        /// <returns>true: sucessful, false: failed</returns>
         public static bool SaveStaffs(List<Staff> staffs, int marker)
         {
             try
             {
+                // Marker is 1 means that this function called
+                // after delete operation, so function will going to create
+                // a new Info.txt file and save all staffs' object in list
                 if (marker == 1)
                 {
+                    // Create new Info.txt file in overwrite mode
                     FileStream stream = new FileStream(FILEPATH, System.IO.FileMode.Create);
                     stream.Close();
                 }
-                StreamWriter sw = new StreamWriter(FILEPATH, true); // filepath
+
+                // Strart Writing
+                StreamWriter sw = new StreamWriter(FILEPATH, true); 
                 for (int i = 0; i < staffs.Count; i++)
                 {
                     sw.WriteLine(staffs[i].StaffId + ","

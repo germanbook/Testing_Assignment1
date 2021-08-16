@@ -23,6 +23,7 @@ namespace WindowsFormsApp1
 
         private void fillListView(List<Staff> staffs)
         {
+            listView1.Items.Clear();
             for (int i = 0; i < staffs.Count; i++)
             {
 

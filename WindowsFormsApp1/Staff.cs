@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
+    /// <summary>
+    /// Staff Class
+    /// Store staff data about objects
+    /// </summary>
     public class Staff
     {
         private int staffId;
         private string name;
-        private int gender; // 1:m 0:f
+        private int gender;                 // 1:m 0:f
         private DateTime dateOfBirth;
         private string email;
         private float annualSalary;
@@ -22,6 +26,9 @@ namespace WindowsFormsApp1
         public float AnnualSalary { get => annualSalary; set => annualSalary = value; }
         public int Gender { get => gender; set => gender = value; }
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public Staff()
         {
             StaffId = 000000;
@@ -33,6 +40,15 @@ namespace WindowsFormsApp1
 
         }
 
+        /// <summary>
+        /// Parameterized constructor
+        /// </summary>
+        /// <param name="staffId">id</param>
+        /// <param name="name">name</param>
+        /// <param name="gender">gender, 0 or 1</param>
+        /// <param name="dateOfBirth">date of birth</param>
+        /// <param name="email">email address</param>
+        /// <param name="annualSalary">salary</param>
         public Staff(int staffId, string name, int gender, DateTime dateOfBirth, string email, float annualSalary)
         {
             StaffId = staffId;
@@ -43,12 +59,20 @@ namespace WindowsFormsApp1
             AnnualSalary = annualSalary;
         }
 
+        /// <summary>
+        /// Override ToString
+        /// </summary>
+        /// <returns>string, staff's information</returns>
         public override string ToString()
         {
             return StaffId+"  "+Name+" "+Gender+" "+DateOfBirth+" "+Email+" "+ AnnualSalary;
         }
 
-        // Override Equals
+        /// <summary>
+        /// Override Equals
+        /// </summary>
+        /// <param name="obj">object</param>
+        /// <returns>bool</returns>
         public override bool Equals(object obj)
         {
             if (obj == null)
@@ -68,7 +92,11 @@ namespace WindowsFormsApp1
             }
         }
 
-        // Recall Equals
+        /// <summary>
+        /// Recall Equals
+        /// </summary>
+        /// <param name="staff">Staff object</param>
+        /// <returns>bool</returns>
         public bool Equals(Staff staff)
         {
             if (staff == null)
@@ -78,7 +106,10 @@ namespace WindowsFormsApp1
             return ( this.StaffId == staff.StaffId );
         }
 
-        // Override GetHashCode
+        /// <summary>
+        /// Override GetHashCode
+        /// </summary>
+        /// <returns>int, staffId's hashcode</returns>
         public override int GetHashCode()
         {
             return staffId.GetHashCode();

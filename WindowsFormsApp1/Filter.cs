@@ -7,9 +7,17 @@ using System.IO;
 
 namespace WindowsFormsApp1
 {
+    /// <summary>
+    /// Filter Class
+    /// Provides search, sort, delete and checkID functions
+    /// </summary>
     public static class Filter
     {
-        // Check staffID is exist or not, true = exist, false = not
+        /// <summary>
+        /// Check staffID is exist or not, true = exist, false = not
+        /// </summary>
+        /// <param name="id">staff ID</param>
+        /// <returns>bool, true = exist, false = not</returns>
         public static bool CheckID(int id)
         {
             int counter = 0;
@@ -33,6 +41,11 @@ namespace WindowsFormsApp1
             }
         }
 
+        /// <summary>
+        /// Sort all the staffs'object data in ascending order
+        /// </summary>
+        /// <param name="staffs">a list of staffs' object</param>
+        /// <returns>a list of staffs' object in ascending order</returns>
         public static List<Staff> SortAZ(List<Staff> staffs)
         {
             staffs = staffs.OrderBy(x => x.Name).ToList();
@@ -40,6 +53,11 @@ namespace WindowsFormsApp1
             return staffs;
         }
 
+        /// <summary>
+        /// Sort all the staffs'object data in descending order
+        /// </summary>
+        /// <param name="staffs">a list of staffs' object</param>
+        /// <returns>a list of staffs' object in descending order</returns>
         public static List<Staff> SortZA(List<Staff> staffs)
         {
             staffs = (from x in staffs
@@ -49,11 +67,18 @@ namespace WindowsFormsApp1
             return staffs;
         }
 
+        /// <summary>
+        /// Delete staff object from a list by given ID
+        /// </summary>
+        /// <param name="staffs">a list of staffs' object</param>
+        /// <param name="id">staff ID</param>
+        /// <returns>bool, true: delete successful, false: faild</returns>
         public static bool DeleteStaff(List<Staff> staffs, int id)
         {
-            // Create a new file when save data after deleted some items.
+
             if (staffs.RemoveAll(x => x.StaffId == id) > 0)
             {
+                // Marker is 1, create a new file when save data after deleted some items.
                 FileManager.SaveStaffs(staffs, 1);
                 return true;
             }
@@ -64,6 +89,12 @@ namespace WindowsFormsApp1
             
         }
 
+        /// <summary>
+        /// Search for staff object based key word
+        /// </summary>
+        /// <param name="staffs">a list of staffs' object</param>
+        /// <param name="term">the key word</param>
+        /// <returns>search results in a list</returns>
         public static List<Staff> Search(List<Staff> staffs, string term)
         {
             List<Staff> results = new List<Staff>();
