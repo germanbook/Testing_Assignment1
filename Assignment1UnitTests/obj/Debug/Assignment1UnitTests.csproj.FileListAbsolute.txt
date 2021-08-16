@@ -70,3 +70,4 @@ C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1 - Cop
 C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1 - Copy\Assignment1UnitTests\obj\Debug\Assignment1UnitTests.csproj.CopyComplete
 C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1 - Copy\Assignment1UnitTests\obj\Debug\Assignment1UnitTests.dll
 C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1 - Copy\Assignment1UnitTests\obj\Debug\Assignment1UnitTests.pdb
+C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\Assignment1UnitTests\bin\Debug\Info.txt

@@ -12,3 +12,4 @@ C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\Windo
 C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\WindowsFormsApp1\bin\Debug\MainMenu.resx
 C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\WindowsFormsApp1\bin\Debug\MainMenu.cs
 C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\WindowsFormsApp1\bin\Debug\MainMenu.Designer.cs
+C:\Users\Bowen.DESKTOP-OH6NHOL\Source\Repos\germanbook\Testing_Assignment1\WindowsFormsApp1\bin\Debug\Info.txt

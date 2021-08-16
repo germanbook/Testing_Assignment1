@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
             // 
             // tbxID
             // 
-            this.tbxID.Location = new System.Drawing.Point(154, 83);
+            this.tbxID.Location = new System.Drawing.Point(155, 83);
             this.tbxID.Name = "tbxID";
             this.tbxID.Size = new System.Drawing.Size(100, 20);
             this.tbxID.TabIndex = 5;
@@ -237,9 +237,9 @@ namespace WindowsFormsApp1
             this.lblNameHint.ForeColor = System.Drawing.Color.Black;
             this.lblNameHint.Location = new System.Drawing.Point(417, 125);
             this.lblNameHint.Name = "lblNameHint";
-            this.lblNameHint.Size = new System.Drawing.Size(153, 32);
+            this.lblNameHint.Size = new System.Drawing.Size(184, 55);
             this.lblNameHint.TabIndex = 18;
-            this.lblNameHint.Text = "ex: James Bond";
+            this.lblNameHint.Text = "ex: James Bond ( only uppercase/lowercase letters)";
             // 
             // lblGenderHint
             // 

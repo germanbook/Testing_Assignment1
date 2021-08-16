@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment1", "WindowsForms
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment1UnitTests", "Assignment1UnitTests\Assignment1UnitTests.csproj", "{9506A953-E202-4C06-B589-6AE29C7918E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment1AutomationTests", "Assignment1AutomationTests\Assignment1AutomationTests.csproj", "{246B0C46-44C4-4444-9568-6139BCAD2A68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9506A953-E202-4C06-B589-6AE29C7918E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9506A953-E202-4C06-B589-6AE29C7918E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9506A953-E202-4C06-B589-6AE29C7918E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{246B0C46-44C4-4444-9568-6139BCAD2A68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{246B0C46-44C4-4444-9568-6139BCAD2A68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{246B0C46-44C4-4444-9568-6139BCAD2A68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{246B0C46-44C4-4444-9568-6139BCAD2A68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
