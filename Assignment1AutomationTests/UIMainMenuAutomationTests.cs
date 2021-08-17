@@ -175,13 +175,13 @@ namespace Assignment1AutomationTests
         }
 
         [TestMethod]
-        public void TestUICheckDateOfBirthLabelAndTextBox()
+        public void TestUICheckDateOfBirthLabelAndDateTimePicker()
         {
 
             // Find the Date of Birth label and check it exists or not
             Assert.IsTrue(sessions.FindElementByAccessibilityId("lblDateBirth").Displayed);
 
-            // Find the Date of Birth text and check it exists or not
+            // Find the Date of Birth datetimepicker and check it exists or not
             Assert.IsTrue(sessions.FindElementByAccessibilityId("dtpDateOfBirth").Displayed);
 
         }
@@ -193,7 +193,7 @@ namespace Assignment1AutomationTests
             // Find the E-mail label and check it exists or not
             Assert.IsTrue(sessions.FindElementByAccessibilityId("lblEmail").Displayed);
 
-            // Find the E-mail text and check it exists or not
+            // Find the E-mail textbox and check it exists or not
             Assert.IsTrue(sessions.FindElementByAccessibilityId("tbxEmail").Displayed);
 
             // Find the E-mail hint and check it exists or not
@@ -208,11 +208,11 @@ namespace Assignment1AutomationTests
             // Find the Annual Salary label and check it exists or not
             Assert.IsTrue(sessions.FindElementByAccessibilityId("lblAnnualSalary").Displayed);
 
-            // Find the Annual Salary text and check it exists or not
+            // Find the Annual Salary textbox and check it exists or not
             Assert.IsTrue(sessions.FindElementByAccessibilityId("tbxSalary").Displayed);
 
-            // Find the Annual Salary text and check it exists or not
-            Assert.IsTrue(sessions.FindElementByAccessibilityId("tbxSalary").Displayed);
+            // Find the Annual Salary hint and check it exists or not
+            Assert.IsTrue(sessions.FindElementByAccessibilityId("lblSalaryHint").Displayed);
 
         }
 

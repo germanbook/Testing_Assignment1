@@ -12,7 +12,7 @@ using System.IO;
 
 namespace WindowsFormsApp1
 {
-    
+    // Adding form class
     public partial class AddingForm : Form
     {
         MainMenu _mainMenu;

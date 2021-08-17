@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
+    // Main menu class
     public partial class MainMenu : Form
     {
         List<Staff> staffs = new List<Staff>();             
@@ -21,7 +22,7 @@ namespace WindowsFormsApp1
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        // Fill listview use staffs' object
+        // Fill listview use a list of staffs' object
         private void fillListView(List<Staff> staffs)
         {
             listView1.Items.Clear();
