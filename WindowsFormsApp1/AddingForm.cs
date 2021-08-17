@@ -32,10 +32,11 @@ namespace WindowsFormsApp1
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
+        // Ok button click
         private void btn_AddStaff_Click(object sender, EventArgs e)
         {
             List<Staff> staffs = new List<Staff>();
-            // gender
+            // transfer gender from radiobutton to 0 or 1
             int tempGender = 0; // Gender 0 : F, 1 : M
             if (rbtnMale.Checked)
             {
@@ -50,7 +51,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                // all fields format match
+                // all fields' value must be valid data
                 if (markerIDAvailable == true &&
                     markerID == true &&
                     markerEmail == true &&
@@ -69,7 +70,7 @@ namespace WindowsFormsApp1
 
                     bool result = FileManager.SaveStaffs(staffs, 0);
 
-                    // saved
+                    // If save sucess or not
                     if (result == false)
                     {
                         MessageBox.Show("Error Saving", "File IO Error");
@@ -79,6 +80,8 @@ namespace WindowsFormsApp1
                         MessageBox.Show("Save Success");
                     }
                 }
+                // If any field's value invalid
+                // get the hint in red color
                 else
                 {
                     if (markerID == false)
@@ -109,29 +112,33 @@ namespace WindowsFormsApp1
                     {
                         lblGenderHint.ForeColor = Color.Red;
                     }
+                    // Show a messagebox
                     MessageBox.Show("  All fileds are required!\n And please check input format!", "Error!",
                                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch (Exception)
             {
+                // Show a messagebox
                 MessageBox.Show("  All fileds are required!\n And please check input format!", "Error!",
                                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
+        // Back button click
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
             _mainMenu.Show();
 
         }
-
+        // email textbox validation
         private void tbxEmail_Leave(object sender, EventArgs e)
         {
             string emailFormat = @"\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*";
 
-            if (tbxEmail.Text.Length != 0) // if textbox email is not empty
+            // if textbox email is not empty
+            if (tbxEmail.Text.Length != 0) 
             {
                 if (Regex.IsMatch(tbxEmail.Text, emailFormat))
                 {
@@ -151,29 +158,36 @@ namespace WindowsFormsApp1
           
         }
 
+        // ID textbox validation
         private void tbxID_Leave(object sender, EventArgs e)
         {
             string idFormat = @"^[0-9]{6}$";
 
-            if (tbxID.Text.Length != 0) // if textbox ID is not empty
+            // if textbox ID is not empty
+            if (tbxID.Text.Length != 0) 
             {
-                if (Regex.IsMatch(tbxID.Text, idFormat)) // ID format match
+                // ID format match
+                if (Regex.IsMatch(tbxID.Text, idFormat)) 
                 {
                     markerID = true;
-                    if (Filter.CheckID(Convert.ToInt32(tbxID.Text)) == true) // ID not available
+                    // ID not available
+                    if (Filter.CheckID(Convert.ToInt32(tbxID.Text)) == true) 
                     {
                         markerIDAvailable = false;
-                        lblStaffIDIsAvailable.Visible = true; // warnning
+                        // show hint
+                        lblStaffIDIsAvailable.Visible = true; 
                         lblIDHint.ForeColor = Color.Black;
                     }
                     else
                     {
-                        markerIDAvailable = true; // ID format match and available
+                        // ID format match and available
+                        markerIDAvailable = true; 
                         lblIDHint.ForeColor = Color.Black;
                         lblStaffIDIsAvailable.Visible = false;
                     }
                 }
-                else // format not match
+                // format not match
+                else
                 {
                     markerID = false;
                     lblIDHint.ForeColor = Color.Red;
@@ -181,11 +195,13 @@ namespace WindowsFormsApp1
             }
             else
             {
-                markerID = false; // format not match 
+                // format not match
+                markerID = false;  
                 lblStaffIDIsAvailable.Visible = false;
             }
         }
 
+        // salary textbox validation
         private void tbxSalary_Leave(object sender, EventArgs e)
         {
             string salaryFormat = @"^\d+(\.\d+)?$";
@@ -209,11 +225,14 @@ namespace WindowsFormsApp1
             }
         }
 
+        // name textbox validation
         private void tbxName_Leave(object sender, EventArgs e)
         {
             string nameFormat = @"^[A-Za-z]*(\s[A-Za-z]*)*$";
-            string spacePattern = "\\s+"; // extra space
-            string replacement = " "; // replacement only one space between firstname and lastname
+            // extra space
+            string spacePattern = "\\s+";
+            // replacement only one space between firstname and lastname
+            string replacement = " "; 
             
             Regex rgx = new Regex(spacePattern);
 
@@ -224,7 +243,8 @@ namespace WindowsFormsApp1
                     markerName = true;
                     lblNameHint.ForeColor = Color.Black;
 
-                    tbxName.Text = rgx.Replace(tbxName.Text, replacement); // replacement extra space to single space
+                    // replacement extra space to single space
+                    tbxName.Text = rgx.Replace(tbxName.Text, replacement); 
                 }
                 else
                 {
@@ -238,6 +258,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        // male radiobutton changed
         private void rbtnMale_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtnMale.Checked == true)
@@ -246,6 +267,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        // female radiobutton changed
         private void rbtnFemale_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtnFemale.Checked == true)
@@ -254,6 +276,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        // male radiobutton click
         private void rbtnMale_Click(object sender, EventArgs e)
         {
             if (markerGender == true)
@@ -262,6 +285,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        // female radiobutton click
         private void rbtnFemale_Click(object sender, EventArgs e)
         {
             if (markerGender == true)
@@ -270,21 +294,22 @@ namespace WindowsFormsApp1
             }
         }
 
+        // button effects
         private void btnOk_MouseEnter(object sender, EventArgs e)
         {
             btnOk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
         }
-
+        // button effects
         private void btnOk_MouseLeave(object sender, EventArgs e)
         {
             btnOk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
         }
-
+        // button effects
         private void btnBack_MouseEnter(object sender, EventArgs e)
         {
             btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
         }
-
+        // button effects
         private void btnBack_MouseLeave(object sender, EventArgs e)
         {
             btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

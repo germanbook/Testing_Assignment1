@@ -12,8 +12,8 @@ namespace WindowsFormsApp1
 {
     public partial class MainMenu : Form
     {
-        List<Staff> staffs = new List<Staff>(); // staffs from text file
-        List<Staff> searchResultStaffs = new List<Staff>(); // search result
+        List<Staff> staffs = new List<Staff>();             
+        List<Staff> searchResultStaffs = new List<Staff>();
 
         public MainMenu()
         {
@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
+        // Fill listview use staffs' object
         private void fillListView(List<Staff> staffs)
         {
             listView1.Items.Clear();
@@ -44,12 +45,17 @@ namespace WindowsFormsApp1
             }
         }
 
+        // Load button click
         private void btnLoad_Click(object sender, EventArgs e)
         {
+            // clear listview
             listView1.Items.Clear();
-            tbxSearch.Clear();
 
-            staffs = FileManager.GetStaffs();
+            // clear search textbox
+            tbxSearch.Clear();              
+
+            // Read staffs from Info.txt
+            staffs = FileManager.GetStaffs();   
 
             if( staffs == null )
             {
@@ -57,34 +63,41 @@ namespace WindowsFormsApp1
             }
             else
             {
-                fillListView(staffs);
+                // Fill the listview
+                fillListView(staffs);      
             }
         }
 
+        // Add Staff button click
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddingForm addingForm = new AddingForm(this);
+            // Open new form
             addingForm.Show();
-            this.Hide();
+
+            // Main menu hidden
+            this.Hide();     
         }
 
-        private void MainMenu_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        // Delete button click
         private void btnDel_Click(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count == 1) // item selected
+            // have one and only one item seleted from listview
+            if (listView1.SelectedItems.Count == 1) 
             {
-
+                // MessageBox ask user to confirm whether to delete
                 DialogResult dr = MessageBox.Show("Are you sure?", "Delete item", MessageBoxButtons.YesNo);
                 if (dr.Equals(DialogResult.Yes))
                 {
+                    // Delete staff by given staff ID
                     if (Filter.DeleteStaff(staffs, Convert.ToInt32(listView1.SelectedItems[0].Text)))
                     {
                         MessageBox.Show("Item deleted!", "Delete Success", MessageBoxButtons.OK);
-                        if (tbxSearch.Text.Length != 0) // refresh result
+                        
+                        // Refresh listview after deletion
+
+                        // If deleted from search results
+                        if (tbxSearch.Text.Length != 0)
                         {
                             listView1.Items.Clear();
                             searchResultStaffs = Filter.Search(staffs, tbxSearch.Text);
@@ -101,21 +114,25 @@ namespace WindowsFormsApp1
             else
             if (listView1.SelectedItems.Count == 0)
             {
+                // Reminder user to select one item to delete
                 MessageBox.Show("Please select one record", "Delete item", MessageBoxButtons.OK);
             }
         }
 
+        // AZ button click
         private void btnAZ_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
 
-            if (tbxSearch.Text.Length != 0) // sort result
+            // Sorting search results
+            if (tbxSearch.Text.Length != 0) 
             {
                 searchResultStaffs = Filter.SortAZ(searchResultStaffs);
                 fillListView(searchResultStaffs);
             }
             else
-            if (tbxSearch.Text.Length == 0) // sort original data
+            // Sorting original data
+            if (tbxSearch.Text.Length == 0) 
             {
                 staffs = Filter.SortAZ(staffs);
                 fillListView(staffs);
@@ -123,78 +140,87 @@ namespace WindowsFormsApp1
 
         }
 
+        // ZA button click
         private void btnZA_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
 
-            if (tbxSearch.Text.Length != 0) // sort result
+            // Sorting search results
+            if (tbxSearch.Text.Length != 0) 
             {
                 searchResultStaffs = Filter.SortZA(searchResultStaffs);
                 fillListView(searchResultStaffs);
             }
             else
-            if (tbxSearch.Text.Length == 0) // sort original data
+            // Sorting original data
+            if (tbxSearch.Text.Length == 0)
             {
                 staffs = Filter.SortZA(staffs);
                 fillListView(staffs);
             }
         }
 
+        // Search textbox changed
         private void tbxSearch_TextChanged(object sender, EventArgs e)
         {
             listView1.Items.Clear();
-            searchResultStaffs = Filter.Search(staffs, tbxSearch.Text); // search result
+            // search result
+            searchResultStaffs = Filter.Search(staffs, tbxSearch.Text); 
+
+            // fill listview with results
             fillListView(searchResultStaffs);
         }
 
+        // button effects 
         private void btnAdd_MouseEnter(object sender, EventArgs e)
         {
             btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
         }
-
+        // button effects 
         private void btnAdd_MouseLeave(object sender, EventArgs e)
         {
             btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
         }
-
+        // button effects 
         private void btnLoad_MouseEnter(object sender, EventArgs e)
         {
             btnLoad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
         }
-
+        // button effects 
         private void btnLoad_MouseLeave(object sender, EventArgs e)
         {
             btnLoad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
         }
-
+        // button effects 
         private void btnAZ_MouseEnter(object sender, EventArgs e)
         {
             btnAZ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
         }
-
+        // button effects 
         private void btnAZ_MouseLeave(object sender, EventArgs e)
         {
             btnAZ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
         }
-
+        // button effects 
         private void btnZA_MouseEnter(object sender, EventArgs e)
         {
             btnZA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
         }
-
+        // button effects 
         private void btnZA_MouseLeave(object sender, EventArgs e)
         {
             btnZA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
         }
-
+        // button effects 
         private void btnDel_MouseEnter(object sender, EventArgs e)
         {
             btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
         }
-
+        // button effects 
         private void btnDel_MouseLeave(object sender, EventArgs e)
         {
             btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
         }
+
     }
 }
