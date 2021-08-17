@@ -233,7 +233,6 @@ namespace WindowsFormsApp1
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenu";
             this.Text = "Main Menu";
-            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.gbxLoadSort.ResumeLayout(false);
             this.gbxLoadSort.PerformLayout();
             this.ResumeLayout(false);

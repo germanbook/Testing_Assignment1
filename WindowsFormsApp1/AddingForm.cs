@@ -32,22 +32,9 @@ namespace WindowsFormsApp1
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void AddingForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_AddStaff_Click(object sender, EventArgs e)
         {
             List<Staff> staffs = new List<Staff>();
-            //*************
-            Console.WriteLine(markerIDAvailable);
-            Console.WriteLine(markerID);
-            Console.WriteLine(markerEmail);
-            Console.WriteLine(markerSalary);
-            Console.WriteLine(markerName);
-            Console.WriteLine(markerGender); 
-            //*************
             // gender
             int tempGender = 0; // Gender 0 : F, 1 : M
             if (rbtnMale.Checked)
@@ -74,7 +61,7 @@ namespace WindowsFormsApp1
                     Staff staff = new Staff(Convert.ToInt32(tbxID.Text),
                                     tbxName.Text,
                                     tempGender,
-                                    Convert.ToDateTime(dtpDateOfBirth.Value.ToString("dd-MM-yyyy")),
+                                    Convert.ToDateTime(dtpDateOfBirth.Value),
                                     tbxEmail.Text,
                                     Convert.ToSingle(tbxSalary.Text)
                                     );

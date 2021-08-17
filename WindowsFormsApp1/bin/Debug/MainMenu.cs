@@ -222,9 +222,5 @@ namespace WindowsFormsApp1
             btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
         }
 
-        private void MainMenu_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
